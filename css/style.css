@@ -3,13 +3,21 @@
    ========================================================================== */
    :root {
     --noir-profond: #1D1D1B;
-    --rouge-accent: #BE1823;
-    --texte-primaire: #f5f5f7;
-    --texte-secondaire: #a1a1a6;
+    --rouge-accent: #ff1a2e;
+    --texte-primaire: #ffffff;
+    --texte-secondaire: #d1d5db;
     --font-system: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --radius: 18px;
     --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Thème clair (variables sur root quand [data-theme="light"]) */
+[data-theme="light"] {
+    --noir-profond: #f6f7f9;
+    --texte-primaire: #0f172a;
+    --texte-secondaire: #334155;
+    --rouge-accent: #2563eb;
 }
 
 *, *::before, *::after {
@@ -33,6 +41,14 @@ body {
     position: relative;
 }
 
+/* Transition douce entre thèmes */
+.theme-transition * {
+    transition: background-color 300ms var(--transition-smooth),
+                color 300ms var(--transition-smooth),
+                border-color 300ms var(--transition-smooth),
+                box-shadow 300ms var(--transition-smooth);
+}
+
 /* Fond animé subtil */
 body::before {
     content: '';
@@ -41,8 +57,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(190, 24, 35, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(190, 24, 35, 0.03) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 50%, rgba(255, 26, 46, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 26, 46, 0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
     animation: backgroundShift 20s ease-in-out infinite;
@@ -82,10 +98,29 @@ header.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Navbar en thème clair : gris clair */
+[data-theme="light"] header {
+    background-color: #e5e7eb;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+[data-theme="light"] header.scrolled {
+    background-color: #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .logo {
@@ -96,6 +131,11 @@ header .container {
     position: relative;
     transition: transform 0.3s var(--transition-smooth);
     display: inline-block;
+}
+
+/* Contraste amélioré pour le logo en mode clair */
+[data-theme="light"] .logo {
+    color: #0f172a;
 }
 
 .logo::after {
@@ -127,6 +167,160 @@ header nav a {
     display: inline-block;
 }
 
+/* Augmenter le contraste pour les liens de navigation */
+[data-theme="light"] header nav a {
+    color: #1e293b;
+}
+
+/* Bouton thème (soleil/lune) */
+.theme-switcher { display: inline-block; margin-left: 1rem; }
+.theme-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--texte-secondaire);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+.theme-toggle:hover { color: var(--texte-primaire); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+
+/* Contraste amélioré pour le bouton thème en mode clair */
+[data-theme="light"] .theme-toggle {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #475569;
+}
+[data-theme="light"] .theme-toggle:hover {
+    border-color: rgba(0, 0, 0, 0.25);
+    color: #0f172a;
+}
+.theme-toggle .icon-sun, .theme-toggle .icon-moon {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    transition: transform 0.45s var(--transition-bounce), opacity 0.3s var(--transition-smooth);
+}
+.theme-toggle .icon-sun { transform: translateY(0); opacity: 1; }
+.theme-toggle .icon-moon { transform: translateY(100%); opacity: 0; }
+[data-theme="light"] .theme-toggle .icon-sun { transform: translateY(100%); opacity: 0; }
+[data-theme="light"] .theme-toggle .icon-moon { transform: translateY(0); opacity: 1; }
+
+/* Ajustements de fonds en fonction du thème (cartes, menus) */
+[data-theme="light"] .dropdown-menu,
+[data-theme="light"] .category-card,
+[data-theme="light"] .skill-category {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+    border-color: rgba(0,0,0,0.12);
+}
+[data-theme="light"] .category-card:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+[data-theme="light"] .skill-tag {
+    background: rgba(37, 99, 235, 0.12);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.28);
+}
+[data-theme="light"] .lang-menu { 
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%); 
+    border-color: rgba(0,0,0,0.12); 
+}
+[data-theme="light"] .lang-option {
+    color: #1e293b;
+}
+[data-theme="light"] .lang-option:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+}
+[data-theme="light"] .email-link:hover { color: var(--rouge-accent); }
+[data-theme="light"] body::before { opacity: 0.3; }
+
+/* Bouton principal en thème clair: dégradé bleu */
+[data-theme="light"] .btn-contact {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+/* Sélecteur de langue (globe en haut à droite) */
+.lang-switcher {
+    position: relative;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.lang-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--texte-secondaire);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.lang-toggle:hover {
+    color: var(--texte-primaire);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Contraste amélioré pour le bouton langue en mode clair */
+[data-theme="light"] .lang-toggle {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #475569;
+}
+[data-theme="light"] .lang-toggle:hover {
+    border-color: rgba(0, 0, 0, 0.25);
+    color: #0f172a;
+}
+
+.lang-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background: linear-gradient(135deg, #2c2c2e 0%, #252527 100%);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s var(--transition-smooth);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.lang-switcher.open .lang-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    width: 100%;
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    background: transparent;
+    border: none;
+    color: var(--texte-secondaire);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s var(--transition-smooth);
+}
+
+.lang-option:hover {
+    background: rgba(255, 26, 46, 0.15);
+    color: var(--texte-primaire);
+}
+
 header nav a::after {
     content: '';
     position: absolute;
@@ -147,6 +341,14 @@ header nav a:hover::after {
     width: 100%;
 }
 
+/* Contraste amélioré pour les liens de navigation en mode clair */
+[data-theme="light"] header nav a:hover {
+    color: #0f172a;
+}
+[data-theme="light"] header nav a::after {
+    background: var(--rouge-accent);
+}
+
 /* Menu déroulant */
 .dropdown {
     position: relative;
@@ -162,6 +364,11 @@ header nav a:hover::after {
     position: relative;
     display: inline-block;
     cursor: pointer;
+}
+
+/* Contraste amélioré pour le menu déroulant en mode clair */
+[data-theme="light"] .dropdown-toggle {
+    color: #1e293b;
 }
 
 .dropdown-toggle::after {
@@ -197,7 +404,7 @@ header nav a:hover::after {
     transform: translateY(-10px);
     transition: all 0.3s var(--transition-smooth);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
-                0 0 20px rgba(190, 24, 35, 0.1);
+                0 0 20px rgba(255, 26, 46, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     z-index: 1000;
@@ -221,6 +428,15 @@ header nav a:hover::after {
     overflow: hidden;
 }
 
+/* Contraste amélioré pour les éléments du menu déroulant en mode clair */
+[data-theme="light"] .dropdown-menu a {
+    color: #1e293b;
+}
+[data-theme="light"] .dropdown-menu a:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+}
+
 .dropdown-menu a::before {
     content: '';
     position: absolute;
@@ -228,13 +444,13 @@ header nav a:hover::after {
     top: 0;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, rgba(190, 24, 35, 0.1), transparent);
+    background: linear-gradient(90deg, rgba(255, 26, 46, 0.2), transparent);
     transition: width 0.3s var(--transition-smooth);
 }
 
 .dropdown-menu a:hover {
     color: var(--texte-primaire);
-    background: rgba(190, 24, 35, 0.05);
+    background: rgba(255, 26, 46, 0.1);
     padding-left: 2rem;
 }
 
@@ -247,13 +463,13 @@ header nav a:hover::after {
 }
 
 .btn-contact {
-    background: linear-gradient(135deg, var(--rouge-accent) 0%, #d91e2a 100%);
+    background: linear-gradient(135deg, var(--rouge-accent) 0%, #ff4757 100%);
     color: var(--texte-primaire);
     padding: 0.5rem 1.5rem;
     border-radius: var(--radius);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(190, 24, 35, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 26, 46, 0.4);
     transition: all 0.3s var(--transition-smooth);
 }
 
@@ -271,7 +487,7 @@ header nav a:hover::after {
 .btn-contact:hover {
     color: var(--texte-primaire) !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(190, 24, 35, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 26, 46, 0.5);
 }
 
 .btn-contact:hover::before {
@@ -386,6 +602,10 @@ footer h2 {
     line-height: 1.8;
 }
 
+.hero-actions {
+    margin-top: 2rem;
+}
+
 #a-propos {
     padding: 6rem 0;
 }
@@ -404,7 +624,7 @@ footer h2 {
 }
 
 .stage-notice {
-    background: linear-gradient(135deg, rgba(190, 24, 35, 0.1) 0%, rgba(190, 24, 35, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(255, 26, 46, 0.12) 0%, rgba(255, 26, 46, 0.06) 100%);
     border-left: 3px solid var(--rouge-accent);
     padding: 1.5rem;
     border-radius: var(--radius);
@@ -433,7 +653,7 @@ footer h2 {
 
 .skill-category:hover {
     transform: translateY(-5px);
-    border-color: rgba(190, 24, 35, 0.3);
+    border-color: rgba(255, 26, 46, 0.4);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -453,21 +673,21 @@ footer h2 {
 }
 
 .skill-tag {
-    background: rgba(190, 24, 35, 0.15);
+    background: rgba(255, 26, 46, 0.18);
     color: var(--rouge-accent);
     padding: 0.5rem 1.25rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid rgba(190, 24, 35, 0.3);
+    border: 1px solid rgba(255, 26, 46, 0.4);
     transition: all 0.3s var(--transition-smooth);
     display: inline-block;
 }
 
 .skill-tag:hover {
-    background: rgba(190, 24, 35, 0.25);
+    background: rgba(255, 26, 46, 0.28);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(190, 24, 35, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 26, 46, 0.3);
 }
 
 #projets {
@@ -508,16 +728,16 @@ footer h2 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(190, 24, 35, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 26, 46, 0.15), transparent);
     transition: left 0.6s;
 }
 
 .category-card:hover {
     transform: translateY(-8px) scale(1.02);
     background: linear-gradient(135deg, #3a3a3c 0%, #2c2c2e 100%);
-    border-color: rgba(190, 24, 35, 0.3);
+    border-color: rgba(255, 26, 46, 0.4);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
-                0 0 30px rgba(190, 24, 35, 0.1);
+                0 0 30px rgba(255, 26, 46, 0.15);
 }
 
 .category-card:hover::before {
