@@ -17,11 +17,37 @@
             <a href="#" class="logo">ENES GUNDEM</a>
             <nav>
                 <div class="dropdown">
-                    <a href="#projets" class="dropdown-toggle">Projets</a>
+                    <a href="#projets" class="dropdown-toggle" data-i18n="nav.projects">Projets</a>
                     <div class="dropdown-menu">
-                        <a href="projets-groupe.html">Projets de Groupe</a>
-                        <a href="projets-perso.html">Projets Personnels</a>
-                        <a href="devoirs.html">Devoirs Scolaires</a>
+                        <a href="projets-groupe.html" data-i18n="nav.groupProjects">Projets de Groupe</a>
+                        <a href="projets-perso.html" data-i18n="nav.personalProjects">Projets Personnels</a>
+                        <a href="devoirs.html" data-i18n="nav.schoolWork">Devoirs Scolaires</a>
+                    </div>
+                </div>
+
+                <div class="theme-switcher" aria-label="Theme selector">
+                    <button class="theme-toggle" title="Thème" aria-pressed="false">
+                        <span class="icon-sun" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64L4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+                        </span>
+                        <span class="icon-moon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/></svg>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="lang-switcher" aria-label="Language selector">
+                    <button class="lang-toggle" title="Traduire" aria-haspopup="true" aria-expanded="false">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm7.93 9h-3.16c-.15-2.19-.87-4.17-2-5.65A8.027 8.027 0 0 1 19.93 11zM12 4.07c1.53 1.5 2.53 3.98 2.68 6.93H9.32C9.47 8.05 10.47 5.57 12 4.07zM4.07 13h3.16c.15 2.19.87 4.17 2 5.65A8.027 8.027 0 0 1 4.07 13zM7.23 11H4.07a8.027 8.027 0 0 1 5.16-6.65c-1.13 1.48-1.85 3.46-2 5.65zM12 19.93c-1.53-1.5-2.53-3.98-2.68-6.93h5.36c-.15 2.95-1.15 5.43-2.68 6.93zM14.77 18.65c1.13-1.48 1.85-3.46 2-5.65h3.16a8.027 8.027 0 0 1-5.16 5.65z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <div class="lang-menu" role="menu">
+                        <button class="lang-option" data-lang="fr" role="menuitem">Français</button>
+                        <button class="lang-option" data-lang="en" role="menuitem">English</button>
+                        <button class="lang-option" data-lang="de" role="menuitem">Deutsch</button>
+                        <button class="lang-option" data-lang="zh" role="menuitem">中文</button>
+                        <button class="lang-option" data-lang="es" role="menuitem">Español</button>
                     </div>
                 </div>
             </nav>
@@ -31,25 +57,29 @@
     <main>
         <section id="accueil">
             <div class="container hero-content animate-on-scroll">
-                <h1>Étudiant MMI passionné par le digital.</h1>
-                <p>Actuellement en 2ᵉ année MMI à Meaux, je recherche un stage de 10 semaines à partir du 30 mars au 5 juin. Passionné par les nouvelles technologies, le développement web et le design.</p>
+                <h1 data-i18n="hero.title">Étudiant MMI passionné par le digital.</h1>
+                <p data-i18n="hero.subtitle">Actuellement en 2ᵉ année MMI à Meaux, je recherche un stage de 10 semaines à partir du 30 mars au 5 juin. Passionné par les nouvelles technologies, le développement web et le design.</p>
+
+                <div class="hero-actions">
+                    <a href="cv.html" class="btn-contact" data-i18n="hero.cvButton">Voir mon CV</a>
+                </div>
             </div>
         </section>
 
         <section id="a-propos">
             <div class="container">
-                <h2 class="section-title animate-on-scroll">À propos de moi.</h2>
+                <h2 class="section-title animate-on-scroll" data-i18n="about.title">À propos de moi.</h2>
                 
                 <div class="about-content animate-on-scroll">
                     <div class="about-text">
-                        <p>Passionné par l'univers des nouvelles technologies et plus particulièrement celui des smartphones, je souhaite mettre à profit mes compétences dans le développement web, le design ainsi que dans la communication/marketing digital.</p>
-                        <p class="stage-notice">🎯 <strong>Recherche de stage :</strong> 10 semaines du 30 mars au 5 juin 2025</p>
+                        <p data-i18n="about.text1">Passionné par l'univers des nouvelles technologies et plus particulièrement celui des smartphones, je souhaite mettre à profit mes compétences dans le développement web, le design ainsi que dans la communication/marketing digital.</p>
+                        <p class="stage-notice" data-i18n="about.internship">🎯 <strong>Recherche de stage :</strong> 10 semaines du 30 mars au 5 juin 2025</p>
                     </div>
                 </div>
 
                 <div class="skills-grid animate-on-scroll">
                     <div class="skill-category">
-                        <h3>Développement Web</h3>
+                        <h3 data-i18n="skills.dev">Développement Web</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">HTML</span>
                             <span class="skill-tag">CSS</span>
@@ -59,7 +89,7 @@
                     </div>
                     
                     <div class="skill-category">
-                        <h3>Design & Multimédia</h3>
+                        <h3 data-i18n="skills.design">Design & Multimédia</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Photoshop</span>
                             <span class="skill-tag">Illustrator</span>
@@ -71,7 +101,7 @@
                     </div>
                     
                     <div class="skill-category">
-                        <h3>Communication & Marketing</h3>
+                        <h3 data-i18n="skills.marketing">Communication & Marketing</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Création de contenus</span>
                             <span class="skill-tag">Réseaux sociaux</span>
@@ -85,30 +115,30 @@
 
         <section id="projets">
             <div class="container">
-                <h2 class="section-title animate-on-scroll">Explorer mes réalisations.</h2>
+                <h2 class="section-title animate-on-scroll" data-i18n="projects.title">Explorer mes réalisations.</h2>
                 
                 <div class="category-grid">
                     <a href="projets-groupe.html" class="category-card animate-on-scroll">
                         <div class="card-content">
-                            <h3>Projets de Groupe</h3>
-                            <p>Travaux collaboratifs réalisés en équipe à l'école.</p>
-                            <span>Découvrir &rarr;</span>
+                            <h3 data-i18n="cards.groupTitle">Projets de Groupe</h3>
+                            <p data-i18n="cards.groupDesc">Travaux collaboratifs réalisés en équipe à l'école.</p>
+                            <span data-i18n="cards.cta">Découvrir →</span>
                         </div>
                     </a>
         
                     <a href="projets-perso.html" class="category-card animate-on-scroll">
                         <div class="card-content">
-                            <h3>Projets Personnels</h3>
-                            <p>Mes initiatives et explorations en dehors du cadre scolaire.</p>
-                            <span>Découvrir &rarr;</span>
+                            <h3 data-i18n="cards.personalTitle">Projets Personnels</h3>
+                            <p data-i18n="cards.personalDesc">Mes initiatives et explorations en dehors du cadre scolaire.</p>
+                            <span data-i18n="cards.cta">Découvrir →</span>
                         </div>
                     </a>
         
                     <a href="devoirs.html" class="category-card animate-on-scroll">
                         <div class="card-content">
-                            <h3>Devoirs Scolaires</h3>
-                            <p>Une sélection de travaux pratiques et d'exercices.</p>
-                            <span>Découvrir &rarr;</span>
+                            <h3 data-i18n="cards.schoolTitle">Devoirs Scolaires</h3>
+                            <p data-i18n="cards.schoolDesc">Une sélection de travaux pratiques et d'exercices.</p>
+                            <span data-i18n="cards.cta">Découvrir →</span>
                         </div>
                     </a>
                 </div>
@@ -118,10 +148,10 @@
 
     <footer>
         <div class="container animate-on-scroll">
-            <h2>Intéressé par mon profil ?</h2>
-            <p class="footer-subtitle">Je suis motivé, rigoureux et curieux, et je souhaite contribuer à vos projets tout en développant mes compétences.</p>
+            <h2 data-i18n="footer.title">Intéressé par mon profil ?</h2>
+            <p class="footer-subtitle" data-i18n="footer.subtitle">Je suis motivé, rigoureux et curieux, et je souhaite contribuer à vos projets tout en développant mes compétences.</p>
             <a href="https://mail.google.com/mail/?view=cm&to=enes130604@gmail.com" class="email-link" target="_blank" rel="noopener">enes130604@gmail.com</a>
-            <p class="footer-location">📍 Élève en 2ᵉ année MMI à Meaux</p>
+            <p class="footer-location" data-i18n="footer.location">📍 Élève en 2ᵉ année MMI à Meaux</p>
         </div>
     </footer>
 
