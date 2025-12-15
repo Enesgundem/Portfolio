@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Enes Gundem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo">ENES GUNDEM</a>
+            <nav>
+                <a href="../index.html#projets" data-i18n="nav.projects">Projets</a>
+                <div class="theme-switcher" aria-label="Theme selector">
+                    <button class="theme-toggle" title="Thème" aria-pressed="false">
+                        <span class="icon-sun" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64L4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                <circle cx="12" cy="12" r="4" fill="currentColor" />
+                            </svg>
+                        </span>
+                        <span class="icon-moon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <div class="lang-switcher" aria-label="Language selector">
+                    <button class="lang-toggle" title="Traduire" aria-haspopup="true" aria-expanded="false">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm7.93 9h-3.16c-.15-2.19-.87-4.17-2-5.65A8.027 8.027 0 0 1 19.93 11zM12 4.07c1.53 1.5 2.53 3.98 2.68 6.93H9.32C9.47 8.05 10.47 5.57 12 4.07zM4.07 13h3.16c.15 2.19.87 4.17 2 5.65A8.027 8.027 0 0 1 4.07 13zM7.23 11H4.07a8.027 8.027 0 0 1 5.16-6.65c-1.13 1.48-1.85 3.46-2 5.65zM12 19.93c-1.53-1.5-2.53-3.98-2.68-6.93h5.36c-.15 2.95-1.15 5.43-2.68 6.93zM14.77 18.65c1.13-1.48 1.85-3.46 2-5.65h3.16a8.027 8.027 0 0 1-5.16 5.65z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+                    <div class="lang-menu" role="menu">
+                        <button class="lang-option" data-lang="fr" role="menuitem">Français</button>
+                        <button class="lang-option" data-lang="en" role="menuitem">English</button>
+                        <button class="lang-option" data-lang="de" role="menuitem">Deutsch</button>
+                        <button class="lang-option" data-lang="zh" role="menuitem">中文</button>
+                        <button class="lang-option" data-lang="es" role="menuitem">Español</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 data-i18n="cv.title">Mon CV</h1>
+                <p data-i18n="cv.subtitle">Vous pouvez consulter mon CV ci-dessous ou le télécharger.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container" style="max-width: 900px;">
+                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <a class="btn-contact" href="../assets/cv.pdf" download data-i18n="cv.download">Télécharger le CV
+                        (PDF)</a>
+                </div>
+
+                <div
+                    style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden;">
+                    <iframe src="../assets/CV.pdf" title="CV PDF"
+                        style="width:100%; height: 80vh; border: none; background: #2c2c2e;"></iframe>
+                </div>
+                <p style="color: var(--texte-secondaire); margin-top: 0.75rem; font-size: 0.95rem;">Si la
+                    prévisualisation ne s’affiche pas, utilisez le bouton de téléchargement.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 data-i18n="footer.title">Intéressé par mon profil ?</h2>
+            <p class="footer-subtitle" data-i18n="footer.subtitle">Je suis motivé, rigoureux et curieux, et je souhaite
+                contribuer à vos projets tout en développant mes compétences.</p>
+            <a href="https://mail.google.com/mail/?view=cm&to=enes130604@gmail.com" class="email-link" target="_blank"
+                rel="noopener">enes130604@gmail.com</a>
+            <p class="footer-location" data-i18n="footer.location">📍 Élève en 2ᵉ année MMI à Meaux</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
