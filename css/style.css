@@ -945,3 +945,45 @@ footer h2 {
         font-size: 2rem;
     }
 }
+
+/* ==========================================================================
+   PROJECT DETAIL LAYOUT REVISION (Text Left, Content Right)
+   ========================================================================== */
+.project-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+/* We want Text (which is currently in .project-detail-right) on the LEFT */
+.project-detail-right {
+    order: 1;
+}
+
+/* We want Content/Media (which is currently in .project-detail-left) on the RIGHT */
+.project-detail-left {
+    order: 2;
+}
+
+/* Content specific adjustments */
+.project-detail-left .btn-contact {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .project-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    /* On mobile, stack naturally (Media first usually looks better) */
+    .project-detail-left,
+    .project-detail-right {
+        order: unset;
+    }
+}
