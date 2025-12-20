@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Projet Professionnel | Enes Gundem</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="logo">ENES GUNDEM</a>
+            <nav>
+                <div class="dropdown">
+                    <a href="../../index.html#projets" class="dropdown-toggle">Projets</a>
+                    <div class="dropdown-menu">
+                        <a href="../projets-groupe.html">Projets de Groupe</a>
+                        <a href="../projets-perso.html">Projets Personnels</a>
+                        <a href="../projets-professionnels.html">Projets Professionnels</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="project-detail-container container">
+            <div class="project-detail-layout">
+                <!-- Colonne de gauche : Projet -->
+                <div class="project-detail-left">
+                    <div class="project-detail-image-wrapper">
+                        <img src="../../assets/julevernes.png" alt="Projet professionnel" class="project-detail-image"
+                            id="project-image" style="max-width: 30%;">
+                    </div>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a href="https://docs.google.com/document/d/1RFcSHPa_7MPh7lk7jyPCPuQnOjJFgX3t/edit?usp=sharing&ouid=106342445011552889321&rtpof=true&sd=true"
+                            class="btn-contact" target="_blank" rel="noopener"
+                            style="background: var(--accent-blue); width: 100%;">Voir le Rapport de Stage</a>
+                    </div>
+                </div>
+
+                <!-- Colonne de droite : Informations -->
+                <div class="project-detail-right">
+                    <div class="project-detail-info">
+                        <h1 class="project-detail-title" id="project-title">Stage IUT Creil</h1>
+
+                        <div class="project-detail-section">
+                            <h2 class="project-detail-section-title">Année</h2>
+                            <p class="project-detail-section-content" id="project-year">2024-2025</p>
+                        </div>
+
+                        <div class="project-detail-section">
+                            <h2 class="project-detail-section-title">Contexte</h2>
+                            <p class="project-detail-section-content" id="project-context">
+                                J'ai effectué mon stage au sein du service informatique de l'IUT de l'Oise, sur les
+                                campus de Creil et Beauvais. Ce service, dirigé par mon tuteur M. Adil Mazet, a pour
+                                mission de maintenir le parc informatique et d'assurer le support pour les étudiants et
+                                le personnel. L'objectif de ce stage était double : participer à la maintenance
+                                quotidienne (interventions, réseaux) mais surtout développer des solutions pour
+                                moderniser la gestion des incidents et la communication interne, ce qui constituait ma
+                                "solution innovante"
+                            </p>
+                        </div>
+
+                        <div class="project-detail-section">
+                            <h2 class="project-detail-section-title">Ce que j'ai fait</h2>
+                            <div class="project-detail-section-content" id="project-tasks">
+                                <p>J'ai été responsable de plusieurs projets clés :</p>
+                                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 10px;">
+                                    <li style="margin-bottom: 10px;"><strong>Système de Ticket et QR Codes :</strong>
+                                        J'ai mis en place un système permettant aux utilisateurs de signaler un problème
+                                        simplement en scannant un QR code généré spécifiquement, qui redirige vers
+                                        l'interface de messagerie pour créer un ticket automatique dans GLPI.</li>
+                                    <li style="margin-bottom: 10px;"><strong>Gestion de parc et Déploiement :</strong>
+                                        J'ai préparé le "Master" (l'image système de référence) en utilisant FOG pour le
+                                        déploiement d'images et WAPT pour l'installation automatisée de logiciels, ce
+                                        qui a permis de renouveler entièrement les salles C107 et A104.</li>
+                                    <li style="margin-bottom: 10px;"><strong>Affichage Dynamique (Xibo) :</strong> J'ai
+                                        configuré des lecteurs Xibo sur des PC dédiés pour diffuser des informations sur
+                                        les écrans de l'IUT, nécessitant une préparation des machines et une gestion
+                                        centralisée du contenu.</li>
+                                    <li><strong>Supervision :</strong> J'ai également configuré Veyon Master pour
+                                        permettre aux enseignants de surveiller et gérer les postes étudiants dans les
+                                        salles de cours.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-detail-section">
+                            <h2 class="project-detail-section-title">Mes difficultés</h2>
+                            <div class="project-detail-section-content" id="project-difficulties">
+                                <p>J'ai rencontré plusieurs obstacles techniques :</p>
+                                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 10px;">
+                                    <li style="margin-bottom: 10px;"><strong>Problèmes de droits d'administration
+                                            :</strong> Lors de l'optimisation du Master Windows, je n'avais pas les
+                                        droits suffisants pour exécuter certains scripts de nettoyage (WinDebloat). J'ai
+                                        dû apprendre à contourner cela en modifiant les politiques de restriction
+                                        d'exécution PowerShell (Set-ExecutionPolicy).</li>
+                                    <li><strong>Configuration réseau et précision :</strong> Sur le projet Veyon, j'ai
+                                        eu des difficultés à exporter correctement la liste des machines à cause
+                                        d'erreurs de syntaxe dans les lignes de commande et de fautes de frappe dans les
+                                        adresses IP, ce qui empêchait la connexion aux clients. Cela m'a forcé à être
+                                        extrêmement rigoureux sur la vérification des données.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-detail-section">
+                            <h2 class="project-detail-section-title">Ce que j'ai appris</h2>
+                            <p class="project-detail-section-content" id="project-learned">
+                                Sur le plan technique, j'ai acquis une maîtrise des outils de déploiement et
+                                d'inventaire comme GLPI, FOG et WAPT. J'ai aussi appris à gérer l'affichage dynamique
+                                avec Xibo. Sur le plan professionnel, ce stage m'a appris à gérer des délais serrés et à
+                                prioriser les urgences, notamment lors des interventions physiques dans les
+                                amphithéâtres (problèmes réseaux, vidéoprojecteurs). J'ai développé une vision plus
+                                globale des enjeux d'un service informatique en entreprise.
+                            </p>
+                        </div>
+
+                        <div class="project-detail-section">
+                            <h2 class="project-detail-section-title">Technologies utilisées</h2>
+                            <div class="project-tech-tags" id="project-tech">
+                                <span class="tech-tag">GLPI</span>
+                                <span class="tech-tag">FOG</span>
+                                <span class="tech-tag">WAPT</span>
+                                <span class="tech-tag">Xibo</span>
+                                <span class="tech-tag">Veyon</span>
+                            </div>
+                        </div>
+
+                        <div class="project-detail-contact">
+                            <a href="https://mail.google.com/mail/?view=cm&to=enes130604@gmail.com" class="btn-contact"
+                                target="_blank" rel="noopener">Me contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Parlons de votre projet.</h2>
+            <a href="https://mail.google.com/mail/?view=cm&to=enes130604@gmail.com" class="email-link" target="_blank"
+                rel="noopener">enes130604@gmail.com</a>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>
